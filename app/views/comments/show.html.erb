@@ -5,7 +5,7 @@
   <%= @comment.body %>
 </p>
 
-<p>
+<p> 
   <%= link_to "Edit", edit_post_comment_path(@comment.post_id, @comment.id) %> |
   <%= link_to "Destroy", post_comment_path(@comment.post_id, @comment.id), :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", post_comments_path %>

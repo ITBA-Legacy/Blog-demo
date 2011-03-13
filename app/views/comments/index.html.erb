@@ -8,10 +8,13 @@
     <tr>
       <td><%= comment.body %></td>
       <td><%= link_to "Show", post_comment_path(comment.post_id, comment.id) %></td>
-      <td><%#= link_to "Edit", edit_post_comment_path(comment) %></td>
-      <td><%#= link_to "Destroy", post_comment_path, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Edit", edit_post_comment_path(comment.post_id, comment.id) %></td>
+      <td><%= link_to "Destroy", post_comment_path(comment.post_id, comment.id), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Comment", new_post_comment_path %></p>
+<p>
+  <%= link_to "New Comment", new_post_comment_path %> | 
+  <%= link_to "Back to Post", post_path(params[:post_id])%>
+</p>
