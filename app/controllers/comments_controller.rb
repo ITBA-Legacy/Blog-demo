@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     @comment.post_id = params[:post_id]
     
     if @comment.save
-      redirect_to post_comment_path(@comment.post_id, @comment.id), :notice => "Successfully created comment."
+      redirect_to post_path(@comment.post_id), :notice => "Successfully created comment."
     else
       render :action => 'new'
     end
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if @comment.update_attributes(params[:comment])
-      redirect_to post_comment_path(@comment.post_id, @comment.id), :notice  => "Successfully updated comment."
+      redirect_to post_path(@comment.post_id), :notice  => "Successfully updated comment."
     else
       render :action => 'edit'
     end
