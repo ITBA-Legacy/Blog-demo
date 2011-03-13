@@ -1,8 +1,0 @@
-<%= form_for @comment, :as => :comment, :url => {:action => 'update'}, :html => {:method => :put} do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
